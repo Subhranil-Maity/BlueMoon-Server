@@ -1,4 +1,4 @@
-use axum::{routing::{Route, get}, Router, response::{IntoResponse, Html}};
+use axum::{routing::get, Router, response::{IntoResponse, Html}};
 mod auth;
 pub fn api_routes() -> Router{
     Router::new().route("/", get(hello))

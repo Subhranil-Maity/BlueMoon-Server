@@ -1,4 +1,4 @@
-use axum::{routing::get, Router, response::{IntoResponse, Html}};
+use axum::Router;
 
 use super::api::api_routes;
 pub fn handler() -> Router {

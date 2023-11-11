@@ -1,4 +1,4 @@
-use axum::{Router, response::IntoResponse, Json, routing::{get, post}};
+use axum::{Router, Json, routing::post};
 use serde_json::{Value, json};
 
 use crate::{auth::LoginPaylaod, utils::error::{Result, Error}};
