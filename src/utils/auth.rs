@@ -1,11 +1,7 @@
-
 use serde::Deserialize;
 
-
-
-
 #[derive(Debug, Deserialize)]
-pub struct LoginPaylaod{
+pub struct LoginPaylaod {
     pub userid: String,
-    pub pwd: String
+    pub pwd: String,
 }

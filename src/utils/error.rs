@@ -1,13 +1,16 @@
-use axum::{response::IntoResponse, http::StatusCode};
+use axum::{http::StatusCode, response::IntoResponse};
 
 use crate::log::err;
 
 pub type Result<T> = core::result::Result<T, Error>;
 
-
 #[derive(Debug)]
-pub enum Error{
+pub enum Error {
     LoginFail,
+    FileOrFolderNotFound,
+    AccessDeniedBySystem,
+    NotAValiedPath,
+    QueryParamMissingOrNotValied
 }
 
 impl IntoResponse for Error {
