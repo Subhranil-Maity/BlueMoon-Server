@@ -10,7 +10,7 @@ pub enum Error {
     FileOrFolderNotFound,
     AccessDeniedBySystem,
     NotAValiedPath,
-    QueryParamMissingOrNotValied
+    QueryParamMissingOrNotValied,
 }
 
 impl IntoResponse for Error {

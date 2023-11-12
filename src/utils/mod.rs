@@ -1,6 +1,6 @@
+pub mod auth;
 pub mod bluenv;
 pub mod error;
-pub mod auth;
 pub mod model;
 
 pub use auth::LoginPaylaod;

@@ -1,8 +1,8 @@
-use std::path::{PathBuf, Path};
+use std::path::{Path, PathBuf};
 use std::str::FromStr;
 
-use axum::Json;
 use axum::extract::Query;
+use axum::Json;
 use serde::{Deserialize, Serialize};
 
 use crate::log::info;
@@ -11,11 +11,11 @@ use crate::utils::model::ItemInfo;
 use crate::utils::error::{Error, Result};
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct InfoQueryParams{
-    path: Option<String>
+pub struct InfoQueryParams {
+    path: Option<String>,
 }
 
-pub async fn get_item_info_route(Query(params): Query<InfoQueryParams>) -> Result<Json<ItemInfo>>{
+pub async fn get_item_info_route(Query(params): Query<InfoQueryParams>) -> Result<Json<ItemInfo>> {
     // if params.path.is_none() {
     //     return Err(Error::QueryParamMissingOrNotValied)
     // }

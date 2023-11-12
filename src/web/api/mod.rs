@@ -1,18 +1,14 @@
-use axum::{
-    routing::get,
-    Router,
-};
+use axum::{routing::get, Router};
 mod auth;
 mod home;
 mod info;
 
-
-mod dir;
-mod rename;
-mod get_item_info;
-mod move_fie;
 mod delete_file_or_folder;
+mod dir;
+mod get_item_info;
 mod mkdir;
+mod move_fie;
+mod rename;
 mod touch;
 
 pub fn api_routes() -> Router {

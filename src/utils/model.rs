@@ -1,17 +1,13 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
-pub struct ItemInfo{
+pub struct ItemInfo {
     name: String,
     path: String,
     size: u64,
 }
 impl ItemInfo {
     pub fn new(name: String, path: String, size: u64) -> ItemInfo {
-        ItemInfo{
-            name,
-            path,
-            size,
-        }
+        ItemInfo { name, path, size }
     }
 }
