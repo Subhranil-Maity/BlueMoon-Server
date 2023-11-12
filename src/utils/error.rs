@@ -11,7 +11,7 @@ pub enum Error {
     AccessDeniedBySystem,
     NotAValidPath,
     QueryParamMissingOrNotValid,
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl IntoResponse for Error {
