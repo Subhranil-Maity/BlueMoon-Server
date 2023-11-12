@@ -1,35 +1,19 @@
-use std::path::{Path, PathBuf};
-use std::str::FromStr;
+use std::fs;
+use std::path::Path;
 
-use axum::extract::Query;
 use axum::Json;
-use serde::{Deserialize, Serialize};
+use axum::extract::Query;
 
-use crate::log::info;
 use crate::utils::model::ItemInfo;
 
 use crate::utils::error::{Error, Result};
+use crate::utils::fs::{get_item_info, get_metadata};
+use crate::utils::query::QueryParams;
 
-#[derive(Debug, Deserialize, Serialize)]
-pub struct InfoQueryParams {
-    path: Option<String>,
-}
-
-pub async fn get_item_info_route(Query(params): Query<InfoQueryParams>) -> Result<Json<ItemInfo>> {
-    // if params.path.is_none() {
-    //     return Err(Error::QueryParamMissingOrNotValied)
-    // }
-    let path = match params.path {
-        Some(p) => p,
-        None => return Err(Error::QueryParamMissingOrNotValied),
-    };
-    let path_obj = Path::new(&path);
-    if !(path_obj.is_absolute() && path_obj.has_root()) {
-        return Err(Error::NotAValiedPath);
-    }
-
-    // let f = PathBuf::from_str(&path).;
-    // info(format!("{:?}", f).to_string());
-    let info = ItemInfo::new("name".to_string(), "path".to_string(), 1000);
+pub async fn get_item_info_route(Query(params): Query<QueryParams>) -> Result<Json<ItemInfo>> {
+    let path = params.get_path()?;
+    let metadata = get_metadata(path)?;
+    let info = get_item_info(path);
+    
     Ok(Json(info).into())
 }

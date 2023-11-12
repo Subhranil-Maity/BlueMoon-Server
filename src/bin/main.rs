@@ -1,5 +1,5 @@
 use axum::{routing::get, Router};
-use bluemoon_client::{log, web::handler};
+use bluemoon_server::{log, web::handler};
 // use tracing::{Level, info};
 // use tracing_subscriber::FmtSubscriber;
 use std::net::SocketAddr;

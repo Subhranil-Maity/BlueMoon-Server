@@ -1,5 +1,5 @@
 [package]
-name = "BlueMoon-Server"
+name = "bluemoon_server"
 version = "0.1.0"
 edition = "2021"
 

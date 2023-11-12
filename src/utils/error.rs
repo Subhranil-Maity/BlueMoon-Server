@@ -9,8 +9,9 @@ pub enum Error {
     LoginFail,
     FileOrFolderNotFound,
     AccessDeniedBySystem,
-    NotAValiedPath,
-    QueryParamMissingOrNotValied,
+    NotAValidPath,
+    QueryParamMissingOrNotValid,
+    UNKNOWN
 }
 
 impl IntoResponse for Error {

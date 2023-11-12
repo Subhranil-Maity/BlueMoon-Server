@@ -2,6 +2,8 @@ pub mod auth;
 pub mod bluenv;
 pub mod error;
 pub mod model;
+pub mod query;
+pub mod fs;
 
 pub use auth::LoginPaylaod;
 
